@@ -1,0 +1,12 @@
+<%- include('partials/header'); %>
+
+<% posts.slice().reverse().forEach(function(post){ %>
+    <a href="/post/<%= post.title %>"><h1><%= post.title %></h1></a>
+    <% if(post.body.length>100){ %>
+        <p><%= post.body.substring(0,100)+"..." %></p>
+        <% } else { %>
+            <p><%= post.body %></p>
+        <% } %>
+<% }) %>
+
+<%- include('partials/footer'); %>
